@@ -191,7 +191,7 @@ resource "aws_subnet" "internal" {
   tags {
     Name        = "${var.name}-${format("internal-%03d", count.index+1)}"
     Environment = "${var.environment}"
-    "kubernetes.io/cluster/k8s-prod-east" = "shared"
+    "kubernetes.io/cluster/prod-east" = "shared"
   }
 }
 
@@ -205,7 +205,7 @@ resource "aws_subnet" "external" {
   tags {
     Name        = "${var.name}-${format("external-%03d", count.index+1)}"
     Environment = "${var.environment}"
-    "kubernetes.io/cluster/k8s-prod-east" = "shared"
+    "kubernetes.io/cluster/prod-east" = "shared"
   }
 }
 
